@@ -1,0 +1,93 @@
+{{define "body"}}
+
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-xl-9 col-lg-5 col-md-11 col-12 text-center">
+    <div class="card">
+
+      <h5 class="text-center mb-4">Powering world-class companies</h5>
+
+      <form class="form-card" action="/update/{{.Id}}" method="POST">
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="name">Firstname
+              <span class="text-danger">*</span>
+            </label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" value="{{.FirstName}}" required minlength="1" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="surname">Last name
+              <span class="text-danger">*</span>
+            </label>
+
+            <input type="text" id="surname" name="surname" placeholder="Enter your last name" value="{{.Surname}}"  required minlength="1" maxlength="100">
+          </div>
+
+        </div>
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="email">Email address
+            </label>
+
+            <input type="text" id="email" name="email" placeholder="" value="{{.Email}}" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="phone">Phone number</label>
+
+            <input type="text" id="phone" name="phone" placeholder="" value="{{.Telephone}}" maxlength="100">
+          </div>
+
+        </div>
+        <div class="row justify-content-between text-left">
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="domicile">Domicile</label>
+            <input type="text" id="domicile" name="domicile" placeholder="" value="{{.Domicile}}" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="company">Company</label>
+
+            <input type="text" id="company" name="company" placeholder="" value="{{.Company}}" maxlength="100">
+          </div>
+
+        </div>
+
+        <div class="row justify-content-between text-left">
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="createdAt">Created At</label>
+            <input type="text" id="createdAt" name="createdAt" placeholder="" value="{{.CreatedAt}}" disabled>
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="updatedAt">Updated At</label>
+
+            <input type="text" id="updatedAt" name="updatedAt" placeholder="" value="{{.UpdatedAt}}" disabled>
+          </div>
+
+        </div>
+
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-12 flex-column d-flex">
+            <label class="form-control-label px-3" for="notes">Notes
+            </label>
+            <textarea id="notes" name="notes" rows="5" maxlength="255">{{.Notes}}</textarea>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="form-group col-sm-6">
+            <button type="submit" class="btn-block btn-primary" formmethod="post">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{end}}

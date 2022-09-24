@@ -1,0 +1,77 @@
+{{define "body"}}
+
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-xl-9 col-lg-11 col-md-11 col-12 text-center">
+    <div class="card">
+
+
+      <form class="form-card" action="/createInfo" method="POST">
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="name">Firstname
+              <span class="text-danger"> *</span>
+            </label>
+            <input type="text" id="name" name="name" placeholder="Enter your first name" required minlength="1" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="surname">Last name
+              <span class="text-danger">*</span>
+            </label>
+
+            <input type="text" id="surname" name="surname" placeholder="Enter your last name" required minlength="1" maxlength="100">
+          </div>
+
+        </div>
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="email">Email address
+            </label>
+
+            <input type="text" id="email" name="email" placeholder="" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="phone">Phone number</label>
+
+            <input type="text" id="phone" name="phone" placeholder="" maxlength="100">
+          </div>
+
+        </div>
+        <div class="row justify-content-between text-left">
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="domicile">Domicile</label>
+            <input type="text" id="domicile" name="domicile" placeholder="" maxlength="100">
+          </div>
+
+          <div class="form-group col-sm-6 flex-column d-flex">
+            <label class="form-control-label px-3" for="company">Company</label>
+
+            <input type="text" id="company" name="company" placeholder="" maxlength="100">
+          </div>
+
+        </div>
+
+        <div class="row justify-content-between text-left">
+          <div class="form-group col-12 flex-column d-flex">
+            <label class="form-control-label px-3" for="notes">Notes
+            </label>
+            <textarea id="notes" name="notes" maxlength="255" rows="5"></textarea>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="form-group col-sm-6">
+            <button type="submit" class="btn-block btn-primary" formmethod="post">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+{{end}}

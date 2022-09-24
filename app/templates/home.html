@@ -1,0 +1,99 @@
+{{define "body"}}
+
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+<div class="container-fluid px-1 py-5 mx-auto"></div>
+
+<div class="fixed-action-btn" id="fixed1" style="height: 80px;">
+  
+  <a class="btn btn-floating btn-primary text-white btn-lg" href="/create"> 
+    <i class="fa fa-plus"></i>
+  </a>
+</div>
+
+<div class="row d-flex justify-content-center">
+  <div class="col-xl-9 col-lg-5 col-md-11 col-12 text-center">
+    <div class="card">
+      <div class="card-body">
+
+          <h5 class="card-title text-uppercase mb-0">Users Info</h5>
+
+          {{ if eq (len .) 0 }}
+
+          <div>
+            <h5 class="font-medium mb-0 text-center">There is no information yet, create one by clicking on + button</h5>
+          </div>
+
+          {{else}}
+
+            <div class="table-responsive">
+              <table class="table no-wrap user-table mb-0">
+                <thead>
+                  <tr>
+                    <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Telephone</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Company</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Domicile</th>
+                    <th scope="col" class="border-0 text-uppercase font-medium">Manage</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+
+                  {{range $index, $element := .}}
+
+
+                  <tr>
+                    <td class="pl-4">{{$index}}</td>
+                    <td>
+                      <h5 class="font-medium mb-0">{{$element.FirstName}} {{$element.Surname}}</h5>
+                    </td>
+                    <td>
+                      <span class="text-muted">{{$element.Telephone}}</span><br>
+                    </td>
+
+                    <td>
+                      <span class="text-muted">{{$element.Email}}</span><br>
+                    </td>
+
+                    <td>
+                      <span class="text-muted">{{$element.Company}}</span><br>
+                    </td>
+
+                    <td>
+                      <span class="text-muted">{{$element.Domicile}}</span><br>
+                    </td>
+
+                    <td>
+                      <a href="/edit/{{$element.Id}}" >
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2">
+                          <i class="fa fa-arrow-right"></i>
+                        </button>
+                      </a>
+
+                      <a href="/delete/{{$element.Id}}">
+                        <button type="button" class="btn btn-outline-info btn-circle btn-lg btn-circle ml-2">
+                          <i class="fa fa-trash"></i>
+                        </button>
+                      </a>
+
+                    </td>
+
+                  </tr>
+
+                  {{end}}
+
+                </tbody>
+              </table>
+            </div>
+
+
+          {{end}}
+        
+      </div>
+    </div>
+
+  </div>
+</div>
+{{end}}
